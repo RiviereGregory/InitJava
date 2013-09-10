@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!-- Bloc obligatoire tel quel -->
+<!-- <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.w3schools.com"
+xmlns="http://www.w3schools.com"
+elementFormDefault="qualified">
+
+
+	<xs:element name="listPerso">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="personnage" minOccurs="1" maxOccurs="100" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="personnage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="type" type="xs:string" minOccurs="1" />
+				<xs:element name="nbVie" type="xs:int" minOccurs="1" />
+				<xs:element name="nom" type="xs:string" minOccurs="1" />
+				<xs:element name="armePre" type="arme" />
+				<xs:element name="armeCourante" type="arme" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:complexType name="arme">
+		<xs:sequence>
+			<xs:element name="type" type="xs:string" minOccurs="1" />
+			<xs:element name="pointDegat" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+</xs:schema> 
